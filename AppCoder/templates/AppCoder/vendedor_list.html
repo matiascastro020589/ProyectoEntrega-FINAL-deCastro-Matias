@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+    body{background-color: rgba(180, 223, 171, 0.795);}
+    h1   {border: 4px solid rgba(95, 218, 90, 0.705);background-color: rgba(244, 245, 244, 0.795)}
+    p    {color: black;border: 1px solid rgba(7, 8, 7, 0.705);background-color: rgba(41, 212, 170, 0.795)}
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vendedores_List</title>
+</head>
+<body>
+
+    <h1>Vendedores</h1>
+    <ul>
+        {% for vendedor in object_list %}
+
+            <li>
+                <p>NOMBRE: {{ vendedor.nombre }} </p>
+                <p1> 
+                    <a href="{% url 'Detailvendedor' vendedor.id %}">Ver</a> | 
+                    <a href="{% url 'Editvendedor' vendedor.id %}">Editar</a> | 
+                    <a href="{% url 'Deletevendedor' vendedor.id %}">Borrar</a> 
+                
+                </p1> 
+            </li>
+
+        {% endfor %}
+    </ul>
+
+    <a href="{% url 'Newvendedor'  %}">Nuevo</a> | 
+
+    <br>
+
+    <button>
+        <a href="../vendedores">Volver</a>
+    </button>
+
+</body>
+</html>

@@ -1,0 +1,106 @@
+{% extends "AppCoder/padre.html" %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+
+    <!--Aquí va lo que cambia, y lo asociado a está vista :) -->
+    <h1><i>BUSCADORES </i></h1>
+  
+
+    <h3>Podes buscar un PRODUCTO (por Precio $):</h3>
+
+    <form action="/AppCoder/buscar/" method="GET">
+
+        <input type="number" name="precio" id="precio">
+
+        <input type="submit" value="Buscar">
+
+
+
+
+    </form>
+
+    
+
+    {% if productos %}
+
+    <p>Estamos buscando el: {{precio}}</p>
+
+    <ul>
+	{% for producto in productos %}
+		<li> NOMBRE PRODUCTO {{producto.nombre}} </li>
+		<li> PRECIO PRODUCTO {{producto.precio}} </li>
+        <hr>
+	{% endfor %}
+        
+    </ul>
+
+    {% endif %}
+
+    <h3>Podes buscar un Cliente (por Nombre):</h3>
+
+    <form action="/AppCoder/buscarcliente/" method="GET">
+
+        <input type="text" name="nombre" id="nombre">
+
+        <input type="submit" value="Buscar">
+
+
+
+
+    </form>
+
+    
+
+    {% if clientes %}
+
+    <p>Estamos buscando el: {{nombre}}</p>
+
+    <ul>
+	{% for cliente in clientes %}
+		<li>NOMBRE CLIENTE {{cliente.nombre}} </li>
+		<li>APELLIDO CLIENTE {{cliente.apellido}} </li>
+        <li>EMAIL CLIENTE {{cliente.email}} </li>
+        <li>LOCALIDAD CLIENTE {{cliente.localidad}} </li>
+        <hr>
+	{% endfor %}
+
+    </ul>
+
+    {% endif %}
+
+    <h3>Podes buscar un Vendedor (por Nombre):</h3>
+
+    <form action="/AppCoder/buscarvendedor/" method="GET">
+
+        <input type="text" name="nombre" id="nombre">
+
+        <input type="submit" value="Buscar">
+
+
+
+
+    </form>
+
+    
+
+    {% if vendedores %}
+
+    <p>Estamos buscando el: {{nombre}}</p>
+
+    <ul>
+	{% for vendedor in vendedores %}
+		<li>NOMBRE VENDEDOR {{vendedor.nombre}} </li>
+		<li>APELLIDO VENDEDOR {{vendedor.apellido}} </li>
+        <li>EMAIL VENDEDOR {{vendedor.email}} </li>
+        <hr>
+        
+	{% endfor %}
+
+    </ul>
+
+    {% endif %}
+
+{% endblock %}

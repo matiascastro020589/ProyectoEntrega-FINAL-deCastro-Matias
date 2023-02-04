@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+    body{background-color: rgba(196, 15, 15, 0.685);}
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cliente Borrar</title>
+</head>
+<body>
+
+    <form method="post">{% csrf_token %}
+       
+        <b>¿Estás seguro que deseas borrar el Cliente "{{ object }}"?</b>
+        <input type="submit" value="Confirmar Eliminar" />
+    </form>
+
+    
+</body>
+</html>

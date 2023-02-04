@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+    body{background-color: rgba(144, 186, 196, 0.322);}
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cliente Detalle</title>
+</head>
+<body>
+
+   
+    <p>Nombre del Cliente:  <i>{{ cliente.nombre }}</i></p>
+    <p>Apellido del Cliente:  <i>{{ cliente.apellido }}</i></p>
+    <p>Email del Cliente:  <i>{{ cliente.email }}</i></p>
+    <p>Localidad del Cliente:  <i>{{ cliente.localidad }}</i></p>
+    <p>
+        <a href="{% url 'Listcliente' %}">Regresar</a>
+    </p>
+
+    
+</body>
+</html>
